@@ -14,7 +14,9 @@ const Header = () => {
           <div>
             <Link to="/pricing">Pricing</Link>
           </div>
-          <div>Community</div>
+          <div>
+            <Link to="/community">Community</Link>
+          </div>
         </div>
         {/* TODO: If already logged in, show the "Create Logo" button and profile
         and name of the user */}
