@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Launch from "./routes/launch/launch.pages";
-import Welcome from "./routes/welcome/welcome.pages";
+import Launch from "./routes/launch/launch.routes";
+import Welcome from "./routes/welcome/welcome.routes";
 import Header from "./components/header/header.component";
+import Pricing from "./routes/pricing/pricing.routes";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Route path="/" element={<Header />}>
         <Route index element={<Launch />} />
         <Route path="home" element={<Welcome />} />
+        <Route path="pricing" element={<Pricing />} />
       </Route>
     </Routes>
   );

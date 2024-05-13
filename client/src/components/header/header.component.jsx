@@ -11,7 +11,9 @@ const Header = () => {
             <Link to="/home">LogoLab</Link>
           </div>
           {/* TODO: If user has been logged in, show additional liks like Design,Logos */}
-          <div>Pricing</div>
+          <div>
+            <Link to="/pricing">Pricing</Link>
+          </div>
           <div>Community</div>
         </div>
         {/* TODO: If already logged in, show the "Create Logo" button and profile

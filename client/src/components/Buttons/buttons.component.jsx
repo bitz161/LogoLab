@@ -6,6 +6,8 @@ const Button = ({ buttonContent }) => {
       className={
         buttonContent === "Discover"
           ? "button-28 buttonDiscover"
+          : buttonContent === "Subscribe"
+          ? "button-28 buttonSubscribe"
           : "button-28 buttonLogin"
       }>
       {buttonContent}
@@ -14,3 +16,5 @@ const Button = ({ buttonContent }) => {
 };
 
 export default Button;
+
+// Subscribe
