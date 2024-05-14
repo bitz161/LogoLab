@@ -1,11 +1,7 @@
+import PostPage from "../../components/postPage/postPage.component";
+
 const Community = () => {
-  return (
-    <div>
-      <div>
-        <h3>Community</h3>
-      </div>
-    </div>
-  );
+  return <PostPage />;
 };
 
 export default Community;
