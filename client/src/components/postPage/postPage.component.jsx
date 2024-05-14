@@ -1,3 +1,4 @@
+import Posts from "../posts/posts.component";
 import Sidebar from "../sidebar/sidebar.component";
 import "./postPage.styles.scss";
 
@@ -9,11 +10,13 @@ const PostPage = () => {
         <div className="post">
           <form className="">
             <input placeholder="Enter Post" />
-            <button>Submit</button>
-            <button>Clear</button>
+            <div className="postButtonContainer">
+              <button class="rounded-none">Submit</button>
+              <button>Clear</button>
+            </div>
           </form>
         </div>
-        <div></div>
+        <Posts />
       </section>
     </div>
   );

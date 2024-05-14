@@ -1,23 +1,50 @@
 .postpageContainer {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  & > section {
+    flex-grow: 1;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
 
-    &>section {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    & > .post {
+      padding: 2rem;
+      width: 30rem;
+      //   border: 1px solid white;
 
-        &>.post {
-
-            &>form {
-                &>input {
-                    height: 5rem;
-                }
-            }
+      & > form {
+        & > input {
+          height: 5rem;
+          border-radius: 1rem;
+          width: 100%;
+          padding: 0 10px;
+          font-weight: 400;
         }
+        & > .postButtonContainer {
+          margin: 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          & > button {
+            border: 1px solid white;
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+          }
+          & > button:hover {
+            border: none;
+            // color: black;
+            background-color: black;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgb(0, 0, 0, 0.7);
+          }
+        }
+      }
     }
+  }
 }
