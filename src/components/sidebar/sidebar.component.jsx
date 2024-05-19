@@ -5,6 +5,7 @@ const Sidebar = () => {
     <div className="sidebarContainer">
       <div>Home</div>
       <div>Popular</div>
+      <div>My Posts</div>
       <hr />
     </div>
   );

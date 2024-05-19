@@ -1,70 +1,49 @@
+import React, { useState, useEffect, useContext } from "react";
 import "./posts.styles.scss";
+import Comments from "../comments/comments.components";
+import { CommunityContext } from "../../utilities/context/community.context";
 
 const Posts = () => {
-  const postSampleArray = [
-    {
-      ID: 1,
-      postDescription: "Sunset at the beach.",
-      likeCount: 150,
-    },
-    {
-      ID: 2,
-      postDescription: "Delicious homemade pizza recipe.",
-      likeCount: 75,
-    },
-    {
-      ID: 3,
-      postDescription: "Best coding practices for beginners.",
-      likeCount: 200,
-    },
-    {
-      ID: 4,
-      postDescription: "Exploring the mountains.",
-      likeCount: 300,
-    },
-    {
-      ID: 5,
-      postDescription: "Learning a new language.",
-      likeCount: 220,
-    },
-    {
-      ID: 6,
-      postDescription: "Gardening tips for the spring.",
-      likeCount: 90,
-    },
-    {
-      ID: 7,
-      postDescription: "The ultimate travel packing list.",
-      likeCount: 140,
-    },
-    {
-      ID: 8,
-      postDescription: "Photography basics for beginners.",
-      likeCount: 160,
-    },
-    {
-      ID: 9,
-      postDescription: "Top 10 books to read this year.",
-      likeCount: 190,
-    },
-    {
-      ID: 10,
-      postDescription: "How to start meditating.",
-      likeCount: 110,
-    },
-  ];
+  const { postData, commentData, setPostData } = useContext(CommunityContext);
+  const [sortedPosts, setSortedPosts] = useState([]);
+
+  useEffect(() => {
+    // Function to sort posts by dateCreated
+    const sortByDateCreated = (a, b) => {
+      return new Date(b.dateCreated) - new Date(a.dateCreated);
+    };
+
+    // Sort postData by dateCreated
+    const sortedPosts = postData.slice().sort(sortByDateCreated);
+    setSortedPosts(sortedPosts);
+  }, [postData]);
+
+  //change the status of the comment if show or not
+  const enableComment = (id) => {
+    const updatedPostData = postData.map((post) =>
+      post.ID === id ? { ...post, commentStatus: !post.commentStatus } : post
+    );
+    setPostData(updatedPostData);
+  };
 
   return (
     <div className="postsContainer">
-      {postSampleArray.map((data) => {
+      {sortedPosts.map((data, index) => {
         return (
-          <div className="postsContentsContainer">
+          <div className="postsContentsContainer" key={data.ID}>
             <p>{data.postDescription}</p>
             <hr />
             <div>
-              <div>{data.likeCount} Liked</div>
-              <div>Comment</div>
+              <div>{data.likedBy.length} Liked</div>
+              <div onClick={() => enableComment(data.ID)}>Comment</div>
             </div>
+            {data.commentStatus && (
+              <Comments
+                commentDatas={commentData}
+                postID={data.ID}
+                enableComment={enableComment}
+              />
+            )}
           </div>
         );
       })}
