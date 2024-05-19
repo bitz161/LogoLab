@@ -16,7 +16,6 @@ const Header = () => {
       console.log("Login proceeding...");
       const response = await signInWithGooglePopup();
       console.log("User signed in:", response.user);
-      window.location.href = "/home"; // Navigate after sign-in
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }

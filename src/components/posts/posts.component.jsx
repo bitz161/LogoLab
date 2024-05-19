@@ -29,6 +29,10 @@ const Posts = () => {
   };
 
   const likePost = (id) => {
+    if (!currentUser) {
+      return;
+    }
+
     const updatedPostData = postData.map((post) => {
       if (post.ID === id) {
         const likedIndex = post.likedBy.findIndex(

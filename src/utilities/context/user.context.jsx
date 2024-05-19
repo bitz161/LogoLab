@@ -14,7 +14,6 @@ export const UserContext = createContext({
 
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [listUser, setListUser] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async (user) => {

@@ -46,12 +46,19 @@ const PostPage = () => {
               placeholder="Enter Post"
               value={postDescription}
               onChange={handleInputChange}
+              disabled={!currentUser}
             />
             <div className="postButtonContainer">
-              <button className="rounded-none" type="submit">
+              <button
+                className="rounded-none"
+                type="submit"
+                disabled={!currentUser}>
                 Submit
               </button>
-              <button type="button" onClick={() => setPostDescription("")}>
+              <button
+                type="button"
+                onClick={() => setPostDescription("")}
+                disabled={!currentUser}>
                 Clear
               </button>
             </div>
