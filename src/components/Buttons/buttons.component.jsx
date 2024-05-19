@@ -1,8 +1,9 @@
 import "./buttons.styles.scss";
 
-const Button = ({ buttonContent }) => {
+const Button = ({ buttonContent, logGoogleUser }) => {
   return (
     <button
+      onClick={logGoogleUser}
       className={
         buttonContent === "Discover"
           ? "button-28 buttonDiscover"
