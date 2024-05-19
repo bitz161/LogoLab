@@ -3,10 +3,12 @@ import Posts from "../posts/posts.component";
 import Sidebar from "../sidebar/sidebar.component";
 import "./postPage.styles.scss";
 import { CommunityContext } from "../../utilities/context/community.context";
+import { UserContext } from "../../utilities/context/user.context";
 
 const PostPage = () => {
   const [postDescription, setPostDescription] = useState("");
   const { postData, setPostData } = useContext(CommunityContext);
+  const { currentUser } = useContext(UserContext);
 
   const handleInputChange = (event) => {
     setPostDescription(event.target.value);
@@ -22,15 +24,15 @@ const PostPage = () => {
       status: "active",
       commentStatus: false,
       createdBy: {
-        userID: 1, // assuming a static user ID for the creator
-        username: "Joe",
-        displayProfile: "https://example.com/profiles/joe.jpg",
+        userID: currentUser.uid, // assuming a static user ID for the creator
+        username: currentUser.displayName,
+        displayProfile: currentUser.photoURL,
       },
       likedBy: [],
     };
 
     setPostData([...postData, newPost]);
-
+    console.log(newPost);
     setPostDescription(""); // Clear the input field after submission
   };
 

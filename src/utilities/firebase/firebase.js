@@ -1,4 +1,3 @@
-// firebase.js
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -7,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -21,8 +21,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
-// Initialize Firebase Auth and set up Google provider
+// Initialize Firebase Auth and Firestore
 const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
 const provider = new GoogleAuthProvider();
 
 // Set custom parameters for the Google Auth provider
@@ -30,9 +31,40 @@ provider.setCustomParameters({
   prompt: "select_account",
 });
 
+// Function to store user data in Firestore
+const createUserDocumentFromAuth = async (userAuth) => {
+  if (!userAuth) return;
+
+  const userDocRef = doc(db, "users", userAuth.uid);
+  const userSnapshot = await getDoc(userDocRef);
+
+  if (!userSnapshot.exists()) {
+    const { displayName, email, photoURL } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        photoURL,
+        createdAt,
+      });
+    } catch (error) {
+      console.error("Error creating user document:", error);
+    }
+  }
+
+  return userDocRef;
+};
+
 // Export sign-in and sign-out functions
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = async () => {
+  const result = await signInWithPopup(auth, provider);
+  await createUserDocumentFromAuth(result.user);
+  return result;
+};
+
 export const signOutUser = () => signOut(auth);
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
-export { auth };
+export { auth, db };

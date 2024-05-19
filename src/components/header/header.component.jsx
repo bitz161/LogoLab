@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 import Button from "../Buttons/buttons.component";
 import "./header.styles.scss";
 import {
@@ -16,6 +16,7 @@ const Header = () => {
       console.log("Login proceeding...");
       const response = await signInWithGooglePopup();
       console.log("User signed in:", response.user);
+      Navigate("/home");
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }
@@ -25,6 +26,7 @@ const Header = () => {
     try {
       await signOutUser();
       console.log("User signed out");
+      Navigate("/");
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -47,9 +49,14 @@ const Header = () => {
         {currentUser ? (
           <>
             <Button buttonContent="Create Logo" onClick={() => {}} />
-            <Button buttonContent="Sign Out" logGoogleUser={logOutUser} />
-            <div>{currentUser.displayName}</div>
-            {/* <img src={currentUser} /> */}
+            <div className="userLoginContainer">
+              <div>{currentUser.displayName}</div>
+              <img
+                src={currentUser.photoURL}
+                alt="User Avatar"
+                onClick={logOutUser}
+              />
+            </div>
           </>
         ) : (
           <Button
