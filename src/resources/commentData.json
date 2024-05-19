@@ -5,9 +5,9 @@
     "commentText": "Beautiful sunset!",
     "dateCreated": "2023-05-01T15:00:00Z",
     "createdBy": {
-      "userID": 2,
-      "username": "Anna",
-      "displayProfile": "https://example.com/profiles/anna.jpg"
+      "userID": 1,
+      "username": "Leanne Graham",
+      "displayProfile": "https://example.com/profiles/anne.jpg"
     }
   },
   {
@@ -16,240 +16,141 @@
     "commentText": "Amazing view.",
     "dateCreated": "2023-05-01T15:10:00Z",
     "createdBy": {
-      "userID": 3,
-      "username": "Mike",
+      "userID": 2,
+      "username": "Ervin Howell",
       "displayProfile": "https://example.com/profiles/mike.jpg"
     }
   },
   {
     "commentID": 3,
-    "postID": 1,
-    "commentText": "I wish I was there!",
-    "dateCreated": "2023-05-01T15:20:00Z",
+    "postID": 2,
+    "commentText": "Can't wait to try this recipe!",
+    "dateCreated": "2023-05-03T10:00:00Z",
     "createdBy": {
-      "userID": 4,
-      "username": "Chris",
-      "displayProfile": "https://example.com/profiles/chris.jpg"
+      "userID": 3,
+      "username": "Clementine Bauch",
+      "displayProfile": "https://example.com/profiles/samantha.jpg"
     }
   },
   {
     "commentID": 4,
     "postID": 2,
-    "commentText": "Can't wait to try this recipe!",
-    "dateCreated": "2023-05-03T10:00:00Z",
-    "createdBy": {
-      "userID": 7,
-      "username": "Samantha",
-      "displayProfile": "https://example.com/profiles/samantha.jpg"
-    }
-  },
-  {
-    "commentID": 5,
-    "postID": 2,
     "commentText": "Looks delicious!",
     "dateCreated": "2023-05-03T10:30:00Z",
     "createdBy": {
-      "userID": 8,
-      "username": "Luis",
+      "userID": 4,
+      "username": "Patricia Lebsack",
       "displayProfile": "https://example.com/profiles/luis.jpg"
     }
   },
   {
-    "commentID": 6,
+    "commentID": 5,
     "postID": 3,
     "commentText": "Great tips, thank you!",
     "dateCreated": "2023-05-05T18:00:00Z",
     "createdBy": {
-      "userID": 16,
-      "username": "Emma",
+      "userID": 5,
+      "username": "Chelsey Dietrich",
       "displayProfile": "https://example.com/profiles/emma.jpg"
     }
   },
   {
-    "commentID": 7,
-    "postID": 3,
-    "commentText": "Very helpful for a beginner.",
-    "dateCreated": "2023-05-05T18:30:00Z",
-    "createdBy": {
-      "userID": 17,
-      "username": "James",
-      "displayProfile": "https://example.com/profiles/james.jpg"
-    }
-  },
-  {
-    "commentID": 8,
+    "commentID": 6,
     "postID": 4,
     "commentText": "I love hiking too!",
     "dateCreated": "2023-05-07T12:30:00Z",
     "createdBy": {
-      "userID": 22,
-      "username": "Emily",
+      "userID": 6,
+      "username": "Mrs. Dennis Schulist",
       "displayProfile": "https://example.com/profiles/emily.jpg"
     }
   },
   {
-    "commentID": 9,
+    "commentID": 7,
     "postID": 4,
     "commentText": "This looks like an amazing place.",
     "dateCreated": "2023-05-07T12:45:00Z",
     "createdBy": {
-      "userID": 23,
-      "username": "Alexander",
+      "userID": 7,
+      "username": "Kurtis Weissnat",
       "displayProfile": "https://example.com/profiles/alexander.jpg"
     }
   },
   {
-    "commentID": 10,
-    "postID": 4,
-    "commentText": "I need to visit this mountain.",
-    "dateCreated": "2023-05-07T13:00:00Z",
-    "createdBy": {
-      "userID": 24,
-      "username": "Amelia",
-      "displayProfile": "https://example.com/profiles/amelia.jpg"
-    }
-  },
-  {
-    "commentID": 11,
+    "commentID": 8,
     "postID": 5,
     "commentText": "Learning a new language is so rewarding!",
     "dateCreated": "2023-05-10T09:00:00Z",
     "createdBy": {
-      "userID": 26,
-      "username": "Abigail",
+      "userID": 8,
+      "username": "Nicholas Runolfsdottir V",
       "displayProfile": "https://example.com/profiles/abigail.jpg"
     }
   },
   {
-    "commentID": 12,
-    "postID": 5,
-    "commentText": "I've been wanting to start learning Spanish.",
-    "dateCreated": "2023-05-10T09:30:00Z",
-    "createdBy": {
-      "userID": 27,
-      "username": "Liam",
-      "displayProfile": "https://example.com/profiles/liam.jpg"
-    }
-  },
-  {
-    "commentID": 13,
+    "commentID": 9,
     "postID": 6,
     "commentText": "Thanks for the tips!",
     "dateCreated": "2023-05-12T15:45:00Z",
     "createdBy": {
-      "userID": 31,
-      "username": "Zoe",
+      "userID": 9,
+      "username": "Glenna Reichert",
       "displayProfile": "https://example.com/profiles/zoe.jpg"
     }
   },
   {
-    "commentID": 14,
-    "postID": 6,
-    "commentText": "Can't wait to start gardening.",
-    "dateCreated": "2023-05-12T16:00:00Z",
-    "createdBy": {
-      "userID": 32,
-      "username": "Oliver",
-      "displayProfile": "https://example.com/profiles/oliver.jpg"
-    }
-  },
-  {
-    "commentID": 15,
+    "commentID": 10,
     "postID": 7,
     "commentText": "Very helpful!",
     "dateCreated": "2023-05-15T11:00:00Z",
     "createdBy": {
-      "userID": 40,
-      "username": "Anthony",
+      "userID": 10,
+      "username": "Clementina DuBuque",
       "displayProfile": "https://example.com/profiles/anthony.jpg"
     }
   },
   {
-    "commentID": 16,
-    "postID": 7,
-    "commentText": "This will make packing much easier.",
-    "dateCreated": "2023-05-15T11:20:00Z",
-    "createdBy": {
-      "userID": 41,
-      "username": "Sophie",
-      "displayProfile": "https://example.com/profiles/sophie.jpg"
-    }
-  },
-  {
-    "commentID": 17,
+    "commentID": 11,
     "postID": 8,
     "commentText": "Great basics for a beginner like me.",
     "dateCreated": "2023-05-18T14:00:00Z",
     "createdBy": {
-      "userID": 42,
-      "username": "Jacob",
-      "displayProfile": "https://example.com/profiles/jacob.jpg"
+      "userID": 11,
+      "username": "Nicholas Runolfsdottir V",
+      "displayProfile": "https://example.com/profiles/oliver.jpg"
     }
   },
   {
-    "commentID": 18,
+    "commentID": 12,
     "postID": 8,
     "commentText": "Thank you for this guide!",
     "dateCreated": "2023-05-18T14:15:00Z",
     "createdBy": {
-      "userID": 25,
-      "username": "Evelyn",
+      "userID": 12,
+      "username": "Glenna Reichert",
       "displayProfile": "https://example.com/profiles/evelyn.jpg"
     }
   },
   {
-    "commentID": 19,
+    "commentID": 13,
     "postID": 9,
     "commentText": "I've read a few of these books already.",
     "dateCreated": "2023-05-20T16:30:00Z",
     "createdBy": {
-      "userID": 10,
-      "username": "Ethan",
+      "userID": 13,
+      "username": "Patricia Lebsack",
       "displayProfile": "https://example.com/profiles/ethan.jpg"
     }
   },
   {
-    "commentID": 20,
-    "postID": 9,
-    "commentText": "Adding these to my reading list!",
-    "dateCreated": "2023-05-20T17:00:00Z",
-    "createdBy": {
-      "userID": 48,
-      "username": "Victoria",
-      "displayProfile": "https://example.com/profiles/victoria.jpg"
-    }
-  },
-  {
-    "commentID": 21,
+    "commentID": 14,
     "postID": 10,
     "commentText": "Meditation has changed my life.",
     "dateCreated": "2023-05-22T08:00:00Z",
     "createdBy": {
-      "userID": 51,
-      "username": "Layla",
+      "userID": 14,
+      "username": "Chelsey Dietrich",
       "displayProfile": "https://example.com/profiles/layla.jpg"
-    }
-  },
-  {
-    "commentID": 22,
-    "postID": 10,
-    "commentText": "Starting my meditation journey today.",
-    "dateCreated": "2023-05-22T08:15:00Z",
-    "createdBy": {
-      "userID": 52,
-      "username": "Jack",
-      "displayProfile": "https://example.com/profiles/jack.jpg"
-    }
-  },
-  {
-    "commentID": 23,
-    "postID": 10,
-    "commentText": "This is very insightful.",
-    "dateCreated": "2023-05-22T08:30:00Z",
-    "createdBy": {
-      "userID": 53,
-      "username": "Zoey",
-      "displayProfile": "https://example.com/profiles/zoey.jpg"
     }
   }
 ]

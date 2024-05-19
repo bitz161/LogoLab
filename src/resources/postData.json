@@ -7,12 +7,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 1,
-      "username": "Joe",
+      "username": "Leanne Graham",
       "displayProfile": "https://example.com/profiles/joe.jpg"
     },
     "likedBy": [
-      { "userID": 19, "username": "Logan" },
-      { "userID": 3, "username": "Mike" }
+      { "userID": 5, "username": "Chelsey Dietrich" },
+      { "userID": 7, "username": "Kurtis Weissnat" }
     ]
   },
   {
@@ -23,15 +23,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 2,
-      "username": "Anna",
+      "username": "Ervin Howell",
       "displayProfile": "https://example.com/profiles/anna.jpg"
     },
     "likedBy": [
-      { "userID": 27, "username": "Liam" },
-      { "userID": 12, "username": "Noah" },
-      { "userID": 46, "username": "Madison" },
-      { "userID": 20, "username": "Charlotte" },
-      { "userID": 8, "username": "Luis" }
+      { "userID": 2, "username": "Ervin Howell" },
+      { "userID": 8, "username": "Nicholas Runolfsdottir V" }
     ]
   },
   {
@@ -42,14 +39,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 3,
-      "username": "Mike",
+      "username": "Clementine Bauch",
       "displayProfile": "https://example.com/profiles/mike.jpg"
     },
     "likedBy": [
-      { "userID": 4, "username": "Chris" },
-      { "userID": 16, "username": "Emma" },
-      { "userID": 29, "username": "Grace" },
-      { "userID": 3, "username": "Mike" }
+      { "userID": 3, "username": "Clementine Bauch" },
+      { "userID": 9, "username": "Glenna Reichert" }
     ]
   },
   {
@@ -60,12 +55,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 4,
-      "username": "Chris",
+      "username": "Patricia Lebsack",
       "displayProfile": "https://example.com/profiles/chris.jpg"
     },
     "likedBy": [
-      { "userID": 21, "username": "Lucas" },
-      { "userID": 35, "username": "Mila" }
+      { "userID": 1, "username": "Leanne Graham" },
+      { "userID": 10, "username": "Clementina DuBuque" }
     ]
   },
   {
@@ -76,15 +71,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 5,
-      "username": "Ashley",
+      "username": "Chelsey Dietrich",
       "displayProfile": "https://example.com/profiles/ashley.jpg"
     },
     "likedBy": [
-      { "userID": 23, "username": "Alexander" },
-      { "userID": 30, "username": "Benjamin" },
-      { "userID": 36, "username": "Aiden" },
-      { "userID": 50, "username": "Addison" },
-      { "userID": 9, "username": "Olivia" }
+      { "userID": 4, "username": "Patricia Lebsack" },
+      { "userID": 6, "username": "Mrs. Dennis Schulist" }
     ]
   },
   {
@@ -95,12 +87,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 6,
-      "username": "Bob",
+      "username": "Mrs. Dennis Schulist",
       "displayProfile": "https://example.com/profiles/bob.jpg"
     },
     "likedBy": [
-      { "userID": 18, "username": "Ava" },
-      { "userID": 5, "username": "Ashley" }
+      { "userID": 3, "username": "Clementine Bauch" },
+      { "userID": 7, "username": "Kurtis Weissnat" }
     ]
   },
   {
@@ -111,14 +103,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 7,
-      "username": "Samantha",
+      "username": "Kurtis Weissnat",
       "displayProfile": "https://example.com/profiles/samantha.jpg"
     },
     "likedBy": [
-      { "userID": 40, "username": "Anthony" },
-      { "userID": 9, "username": "Olivia" },
-      { "userID": 37, "username": "Chloe" },
-      { "userID": 14, "username": "William" }
+      { "userID": 2, "username": "Ervin Howell" },
+      { "userID": 5, "username": "Chelsey Dietrich" }
     ]
   },
   {
@@ -129,13 +119,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 8,
-      "username": "Luis",
+      "username": "Nicholas Runolfsdottir V",
       "displayProfile": "https://example.com/profiles/luis.jpg"
     },
     "likedBy": [
-      { "userID": 32, "username": "Oliver" },
-      { "userID": 52, "username": "Jack" },
-      { "userID": 25, "username": "Evelyn" }
+      { "userID": 3, "username": "Clementine Bauch" },
+      { "userID": 9, "username": "Glenna Reichert" }
     ]
   },
   {
@@ -146,31 +135,12 @@
     "commentStatus": false,
     "createdBy": {
       "userID": 9,
-      "username": "Olivia",
+      "username": "Glenna Reichert",
       "displayProfile": "https://example.com/profiles/olivia.jpg"
     },
     "likedBy": [
-      { "userID": 10, "username": "Ethan" },
-      { "userID": 49, "username": "Samuel" },
-      { "userID": 22, "username": "Emily" },
-      { "userID": 19, "username": "Logan" }
-    ]
-  },
-  {
-    "ID": 10,
-    "postDescription": "How to start meditating.",
-    "dateCreated": "2023-05-22T07:25:00Z",
-    "status": "hidden",
-    "commentStatus": false,
-    "createdBy": {
-      "userID": 10,
-      "username": "Ethan",
-      "displayProfile": "https://example.com/profiles/ethan.jpg"
-    },
-    "likedBy": [
-      { "userID": 31, "username": "Zoe" },
-      { "userID": 55, "username": "Allison" },
-      { "userID": 54, "username": "John" }
+      { "userID": 1, "username": "Leanne Graham" },
+      { "userID": 2, "username": "Ervin Howell" }
     ]
   }
 ]

@@ -1,4 +1,9 @@
 .commentContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  & > * {
+    margin: 10px 0;
+  }
 }

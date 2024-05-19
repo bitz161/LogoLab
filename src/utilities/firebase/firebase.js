@@ -48,6 +48,7 @@ const createUserDocumentFromAuth = async (userAuth) => {
         email,
         photoURL,
         createdAt,
+        subscription: "free",
       });
     } catch (error) {
       console.error("Error creating user document:", error);
@@ -55,6 +56,32 @@ const createUserDocumentFromAuth = async (userAuth) => {
   }
 
   return userDocRef;
+};
+
+// Function to retrieve user information from Firestore by UID
+const getUserByUID = async (uid) => {
+  try {
+    // Construct a reference to the user document using the UID
+    const userDocRef = doc(db, "users", uid);
+
+    // Retrieve the user document snapshot
+    const userSnapshot = await getDoc(userDocRef);
+
+    // Check if the document exists
+    if (userSnapshot.exists()) {
+      // Access the user data from the snapshot
+      const userData = userSnapshot.data();
+      return userData;
+    } else {
+      // Handle case where user document does not exist
+      console.log("User document does not exist");
+      return null;
+    }
+  } catch (error) {
+    // Handle any errors that occur during the process
+    console.error("Error fetching user document:", error);
+    return null;
+  }
 };
 
 // Export sign-in and sign-out functions
@@ -67,4 +94,4 @@ export const signInWithGooglePopup = async () => {
 export const signOutUser = () => signOut(auth);
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
-export { auth, db };
+export { auth, db, getUserByUID };

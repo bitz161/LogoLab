@@ -8,10 +8,13 @@ import { doc, getDoc } from "firebase/firestore";
 export const UserContext = createContext({
   currentUser: null,
   setCurrentUser: () => null,
+  listUser: null,
+  setListUser: () => null,
 });
 
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
+  const [listUser, setListUser] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async (user) => {
