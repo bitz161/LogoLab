@@ -8,7 +8,7 @@ const Home = () => {
         <h2>Hi User!</h2>
         <SearchBar />
       </div>
-
+      {/* Sample text */}
       {/* Logos location */}
       <div></div>
     </div>
