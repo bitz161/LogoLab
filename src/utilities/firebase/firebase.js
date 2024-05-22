@@ -10,12 +10,12 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBiGds-EpCkg8UN_D7enAacz4y_aoGFHbk",
-  authDomain: "logolab-92529.firebaseapp.com",
-  projectId: "logolab-92529",
-  storageBucket: "logolab-92529.appspot.com",
-  messagingSenderId: "1068429743853",
-  appId: "1:1068429743853:web:d4b132d290eef33ae65ee4",
+  apiKey: "AIzaSyB_v8ZabNFWAT12IPPPI_CjL6ZrrZBS0hc",
+  authDomain: "logolab-9f16c.firebaseapp.com",
+  projectId: "logolab-9f16c",
+  storageBucket: "logolab-9f16c.appspot.com",
+  messagingSenderId: "412573554975",
+  appId: "1:412573554975:web:3e425abccbb844e985782a",
 };
 
 // Initialize Firebase
