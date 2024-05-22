@@ -52,7 +52,7 @@ const Posts = ({ communityPosts }) => {
     }
 
     const updatedPostData = postData.map((post) => {
-      console.log(post.likedBy.length);
+      // console.log(post.likedBy.length);
       if (post.ID === id) {
         const likedIndex = post.likedBy.findIndex(
           (like) => like.userID === currentUser.uid
@@ -108,6 +108,7 @@ const Posts = ({ communityPosts }) => {
             <div>
               <div onClick={() => likePost(data.ID)}>
                 {data.likedBy.length} Liked
+                {/* TODO: Fix like counting */}
               </div>
               <div onClick={() => enableComment(data.ID)}>Comment</div>
             </div>

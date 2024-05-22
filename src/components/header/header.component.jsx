@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 import Button from "../Buttons/buttons.component";
 import "./header.styles.scss";
 import {
@@ -31,6 +31,10 @@ const Header = () => {
     }
   };
 
+  const NavigateToLogo = () => {
+    window.location.href = "/logo"; // Navigate after logout
+  };
+
   return (
     <>
       <div className="headerContainer">
@@ -47,7 +51,7 @@ const Header = () => {
         </div>
         {currentUser ? (
           <>
-            <Button buttonContent="Create Logo" onClick={() => {}} />
+            <Button buttonContent="Create Logo" onClick={NavigateToLogo} />
             <div className="userLoginContainer">
               <div>{currentUser.displayName}</div>
               <img

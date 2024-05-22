@@ -84,6 +84,31 @@ const getUserByUID = async (uid) => {
   }
 };
 
+// Function to upgrade user's subscription to premium
+const upgradeSubscriptionToPremium = async (uid) => {
+  try {
+    // Construct a reference to the user document using the UID
+    const userDocRef = doc(db, "users", uid);
+
+    // Update the subscription field to "premium"
+    await setDoc(userDocRef, { subscription: "premium" }, { merge: true });
+
+    console.log("Subscription upgraded to premium successfully");
+  } catch (error) {
+    console.error("Error upgrading subscription to premium:", error);
+  }
+};
+
+// Export function to upgrade subscription
+export const upgradeSubscription = async () => {
+  const user = auth.currentUser;
+  if (user) {
+    await upgradeSubscriptionToPremium(user.uid);
+  } else {
+    console.error("No user is currently signed in.");
+  }
+};
+
 // Export sign-in and sign-out functions
 export const signInWithGooglePopup = async () => {
   const result = await signInWithPopup(auth, provider);
