@@ -1,0 +1,146 @@
+[
+  {
+    "ID": 1,
+    "postDescription": "Sunset at the beach.",
+    "dateCreated": "2023-05-01T14:30:00Z",
+    "status": "active",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 1,
+      "username": "Leanne Graham",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 5, "username": "Chelsey Dietrich" },
+      { "userID": 7, "username": "Kurtis Weissnat" }
+    ]
+  },
+  {
+    "ID": 2,
+    "postDescription": "Delicious homemade pizza recipe.",
+    "dateCreated": "2023-05-03T09:15:00Z",
+    "status": "active",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 2,
+      "username": "Ervin Howell",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 2, "username": "Ervin Howell" },
+      { "userID": 8, "username": "Nicholas Runolfsdottir V" }
+    ]
+  },
+  {
+    "ID": 3,
+    "postDescription": "Best coding practices for beginners.",
+    "dateCreated": "2023-05-05T17:45:00Z",
+    "status": "archived",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 3,
+      "username": "Clementine Bauch",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 3, "username": "Clementine Bauch" },
+      { "userID": 9, "username": "Glenna Reichert" }
+    ]
+  },
+  {
+    "ID": 4,
+    "postDescription": "Exploring the mountains.",
+    "dateCreated": "2023-05-07T12:00:00Z",
+    "status": "active",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 4,
+      "username": "Patricia Lebsack",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 1, "username": "Leanne Graham" },
+      { "userID": 10, "username": "Clementina DuBuque" }
+    ]
+  },
+  {
+    "ID": 5,
+    "postDescription": "Learning a new language.",
+    "dateCreated": "2023-05-10T08:30:00Z",
+    "status": "hidden",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 5,
+      "username": "Chelsey Dietrich",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 4, "username": "Patricia Lebsack" },
+      { "userID": 6, "username": "Mrs. Dennis Schulist" }
+    ]
+  },
+  {
+    "ID": 6,
+    "postDescription": "Gardening tips for the spring.",
+    "dateCreated": "2023-05-12T15:20:00Z",
+    "status": "active",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 6,
+      "username": "Mrs. Dennis Schulist",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 3, "username": "Clementine Bauch" },
+      { "userID": 7, "username": "Kurtis Weissnat" }
+    ]
+  },
+  {
+    "ID": 7,
+    "postDescription": "The ultimate travel packing list.",
+    "dateCreated": "2023-05-15T10:50:00Z",
+    "status": "active",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 7,
+      "username": "Kurtis Weissnat",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 2, "username": "Ervin Howell" },
+      { "userID": 5, "username": "Chelsey Dietrich" }
+    ]
+  },
+  {
+    "ID": 8,
+    "postDescription": "Photography basics for beginners.",
+    "dateCreated": "2023-05-18T13:40:00Z",
+    "status": "archived",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 8,
+      "username": "Nicholas Runolfsdottir V",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 3, "username": "Clementine Bauch" },
+      { "userID": 9, "username": "Glenna Reichert" }
+    ]
+  },
+  {
+    "ID": 9,
+    "postDescription": "Top 10 books to read this year.",
+    "dateCreated": "2023-05-20T16:00:00Z",
+    "status": "active",
+    "commentStatus": false,
+    "createdBy": {
+      "userID": 9,
+      "username": "Glenna Reichert",
+      "displayProfile": ""
+    },
+    "likedBy": [
+      { "userID": 1, "username": "Leanne Graham" },
+      { "userID": 2, "username": "Ervin Howell" }
+    ]
+  }
+]
