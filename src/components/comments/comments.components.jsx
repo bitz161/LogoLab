@@ -18,7 +18,20 @@ const Comments = ({ commentDatas, postID, enableComment }) => {
   return (
     <div className="commentContainer">
       {sortedComments.map((comment, index) => (
-        <div key={index}>{comment.commentText}</div>
+        <div key={index}>
+          <img
+            src={
+              comment.createdBy.displayProfile
+                ? comment.createdBy.displayProfile
+                : `https://robohash.org/${comment.createdBy.userID}?set=set2`
+            }
+            alt=""
+          />
+          <div>
+            <div>{comment.createdBy.username}</div>
+            <div key={index}>{comment.commentText}</div>
+          </div>
+        </div>
       ))}
     </div>
   );

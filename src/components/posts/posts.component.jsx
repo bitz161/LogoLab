@@ -3,22 +3,40 @@ import "./posts.styles.scss";
 import Comments from "../comments/comments.components";
 import { CommunityContext } from "../../utilities/context/community.context";
 import { UserContext } from "../../utilities/context/user.context";
+import InsertComment from "../insertComment/insertComment.component";
 
-const Posts = () => {
+const Posts = ({ communityPosts }) => {
   const { postData, commentData, setPostData } = useContext(CommunityContext);
   const [sortedPosts, setSortedPosts] = useState([]);
   const { currentUser } = useContext(UserContext);
 
   useEffect(() => {
-    // Function to sort posts by dateCreated
-    const sortByDateCreated = (a, b) => {
-      return new Date(b.dateCreated) - new Date(a.dateCreated);
-    };
+    let sortedPosts;
 
-    // Sort postData by dateCreated
-    const sortedPosts = postData.slice().sort(sortByDateCreated);
+    if (communityPosts === "home") {
+      sortedPosts = postData
+        .slice()
+        .sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated));
+    } else if (communityPosts === "popular") {
+      sortedPosts = postData.slice().sort((a, b) => {
+        // Sort first by the number of likes (descending)
+        const likesComparison = b.likedBy.length - a.likedBy.length;
+        if (likesComparison !== 0) {
+          return likesComparison;
+        }
+        // If likes are equal, sort by dateCreated (descending)
+        return new Date(b.dateCreated) - new Date(a.dateCreated);
+      });
+    } else {
+      // Assuming the condition is for posts created by the current user
+      sortedPosts = postData
+        .slice()
+        .sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated))
+        .filter((data) => data.createdBy.userID === currentUser.uid);
+    }
+
     setSortedPosts(sortedPosts);
-  }, [postData]);
+  }, [postData, communityPosts, currentUser]);
 
   //change the status of the comment if show or not
   const enableComment = (id) => {
@@ -34,14 +52,16 @@ const Posts = () => {
     }
 
     const updatedPostData = postData.map((post) => {
+      console.log(post.likedBy.length);
       if (post.ID === id) {
         const likedIndex = post.likedBy.findIndex(
           (like) => like.userID === currentUser.uid
         );
         if (likedIndex !== -1) {
           // User already liked the post, remove the like
-          const updatedLikedBy = [...post.likedBy];
-          updatedLikedBy.splice(likedIndex, 1);
+          const updatedLikedBy = post.likedBy.filter(
+            (like) => like.userID !== currentUser.uid
+          );
           return {
             ...post,
             likedBy: updatedLikedBy,
@@ -73,7 +93,14 @@ const Posts = () => {
         return (
           <div className="postsContentsContainer" key={data.ID}>
             <div className="posterInfoContainer">
-              <img src={data.createdBy.displayProfile} alt="Poster Avatar" />
+              <img
+                src={
+                  data.createdBy.displayProfile
+                    ? data.createdBy.displayProfile
+                    : `https://robohash.org/${data.createdBy.userID}?set=set2`
+                }
+                alt="Poster Avatar"
+              />
               <div>{data.createdBy.username}</div>
             </div>
             <p>{data.postDescription}</p>
@@ -93,6 +120,8 @@ const Posts = () => {
                 />
               )}
             </div>
+
+            <InsertComment postID={data.ID} />
           </div>
         );
       })}

@@ -8,7 +8,7 @@
     "createdBy": {
       "userID": 1,
       "username": "Leanne Graham",
-      "displayProfile": "https://example.com/profiles/joe.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 5, "username": "Chelsey Dietrich" },
@@ -24,7 +24,7 @@
     "createdBy": {
       "userID": 2,
       "username": "Ervin Howell",
-      "displayProfile": "https://example.com/profiles/anna.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 2, "username": "Ervin Howell" },
@@ -40,7 +40,7 @@
     "createdBy": {
       "userID": 3,
       "username": "Clementine Bauch",
-      "displayProfile": "https://example.com/profiles/mike.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 3, "username": "Clementine Bauch" },
@@ -56,7 +56,7 @@
     "createdBy": {
       "userID": 4,
       "username": "Patricia Lebsack",
-      "displayProfile": "https://example.com/profiles/chris.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 1, "username": "Leanne Graham" },
@@ -72,7 +72,7 @@
     "createdBy": {
       "userID": 5,
       "username": "Chelsey Dietrich",
-      "displayProfile": "https://example.com/profiles/ashley.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 4, "username": "Patricia Lebsack" },
@@ -88,7 +88,7 @@
     "createdBy": {
       "userID": 6,
       "username": "Mrs. Dennis Schulist",
-      "displayProfile": "https://example.com/profiles/bob.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 3, "username": "Clementine Bauch" },
@@ -104,7 +104,7 @@
     "createdBy": {
       "userID": 7,
       "username": "Kurtis Weissnat",
-      "displayProfile": "https://example.com/profiles/samantha.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 2, "username": "Ervin Howell" },
@@ -120,7 +120,7 @@
     "createdBy": {
       "userID": 8,
       "username": "Nicholas Runolfsdottir V",
-      "displayProfile": "https://example.com/profiles/luis.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 3, "username": "Clementine Bauch" },
@@ -136,7 +136,7 @@
     "createdBy": {
       "userID": 9,
       "username": "Glenna Reichert",
-      "displayProfile": "https://example.com/profiles/olivia.jpg"
+      "displayProfile": ""
     },
     "likedBy": [
       { "userID": 1, "username": "Leanne Graham" },

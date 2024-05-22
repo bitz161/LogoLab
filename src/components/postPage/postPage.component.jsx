@@ -6,6 +6,7 @@ import { CommunityContext } from "../../utilities/context/community.context";
 import { UserContext } from "../../utilities/context/user.context";
 
 const PostPage = () => {
+  const [communityPosts, setCommunityPosts] = useState("home");
   const [postDescription, setPostDescription] = useState("");
   const { postData, setPostData } = useContext(CommunityContext);
   const { currentUser } = useContext(UserContext);
@@ -38,7 +39,7 @@ const PostPage = () => {
 
   return (
     <div className="postpageContainer">
-      <Sidebar />
+      <Sidebar setCommunityPosts={setCommunityPosts} />
       <section>
         <div className="post">
           <form onSubmit={handleSubmit}>
@@ -64,7 +65,7 @@ const PostPage = () => {
             </div>
           </form>
         </div>
-        <Posts />
+        <Posts communityPosts={communityPosts} />
       </section>
     </div>
   );
