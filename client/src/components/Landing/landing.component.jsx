@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Buttons/buttons.component";
 import "./landing.styles.scss";
 

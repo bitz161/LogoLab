@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import "./buttons.styles.scss";
 
-const Button = ({ buttonContent }) => {
+const Button = ({ buttonContent, onClick }) => {
   return (
     <button
+      onClick={onClick}
       className={
         buttonContent === "Discover"
           ? "button-28 buttonDiscover"
@@ -10,11 +12,13 @@ const Button = ({ buttonContent }) => {
           ? "button-28 buttonSubscribe"
           : "button-28 buttonLogin"
       }>
-      {buttonContent}
+      {buttonContent === "Discover" ? (
+        <Link to="/home">{buttonContent}</Link>
+      ) : (
+        buttonContent
+      )}
     </button>
   );
 };
 
 export default Button;
-
-// Subscribe

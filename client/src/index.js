@@ -6,15 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./utilities/context/user.context";
 import { LogoProvider } from "./utilities/context/logos.context";
+import { CommunityProvider } from "./utilities/context/community.context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <LogoProvider>
-          <App />
-        </LogoProvider>
+        <CommunityProvider>
+          <LogoProvider>
+            <App />
+          </LogoProvider>
+        </CommunityProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,0 +1,35 @@
+.insertCommentContainer {
+  height: 3rem;
+  & > form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0 10px;
+
+    & > input {
+      //   padding: 0 10px;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      &:hover,
+      &:focus {
+        outline: none;
+        border: none; /* Override any border styles */
+        background: inherit; /* Maintain the original background */
+      }
+    }
+
+    & > .CommentButtonContainer {
+      & > button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

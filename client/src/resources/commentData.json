@@ -1,0 +1,167 @@
+[
+  {
+    "commentID": 8,
+    "postID": 5,
+    "commentText": "Learning a new language is so rewarding!",
+    "dateCreated": "2023-05-10T09:00:00Z",
+    "createdBy": {
+      "userID": 8,
+      "username": "Nicholas Runolfsdottir V",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 3,
+    "postID": 2,
+    "commentText": "Looks delicious!",
+    "dateCreated": "2023-05-03T10:30:00Z",
+    "createdBy": {
+      "userID": 4,
+      "username": "Patricia Lebsack",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 6,
+    "postID": 4,
+    "commentText": "I love hiking too!",
+    "dateCreated": "2023-05-07T12:30:00Z",
+    "createdBy": {
+      "userID": 6,
+      "username": "Mrs. Dennis Schulist",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 14,
+    "postID": 10,
+    "commentText": "Meditation has changed my life.",
+    "dateCreated": "2023-05-22T08:00:00Z",
+    "createdBy": {
+      "userID": 14,
+      "username": "Chelsey Dietrich",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 11,
+    "postID": 8,
+    "commentText": "Great basics for a beginner like me.",
+    "dateCreated": "2023-05-18T14:00:00Z",
+    "createdBy": {
+      "userID": 11,
+      "username": "Nicholas Runolfsdottir V",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 1,
+    "postID": 1,
+    "commentText": "Amazing view.",
+    "dateCreated": "2023-05-01T15:10:00Z",
+    "createdBy": {
+      "userID": 2,
+      "username": "Ervin Howell",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 19,
+    "postID": 9,
+    "commentText": "Calligraphy looks so elegant.",
+    "dateCreated": "2023-05-28T14:30:00Z",
+    "createdBy": {
+      "userID": 19,
+      "username": "Patricia Lebsack",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 4,
+    "postID": 2,
+    "commentText": "Great tips, thank you!",
+    "dateCreated": "2023-05-05T18:00:00Z",
+    "createdBy": {
+      "userID": 5,
+      "username": "Chelsey Dietrich",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 2,
+    "postID": 1,
+    "commentText": "Beautiful sunset!",
+    "dateCreated": "2023-05-01T15:00:00Z",
+    "createdBy": {
+      "userID": 1,
+      "username": "Leanne Graham",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 9,
+    "postID": 6,
+    "commentText": "Thanks for the tips!",
+    "dateCreated": "2023-05-12T15:45:00Z",
+    "createdBy": {
+      "userID": 9,
+      "username": "Glenna Reichert",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 7,
+    "postID": 4,
+    "commentText": "This looks like an amazing place.",
+    "dateCreated": "2023-05-07T12:45:00Z",
+    "createdBy": {
+      "userID": 7,
+      "username": "Kurtis Weissnat",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 20,
+    "postID": 7,
+    "commentText": "Photography is such a beautiful art form.",
+    "dateCreated": "2023-05-30T16:30:00Z",
+    "createdBy": {
+      "userID": 21,
+      "username": "Mrs. Dennis Schulist",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 16,
+    "postID": 6,
+    "commentText": "Excited to try this recipe!",
+    "dateCreated": "2023-05-25T11:00:00Z",
+    "createdBy": {
+      "userID": 16,
+      "username": "Leanne Graham",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 17,
+    "postID": 3,
+    "commentText": "Looks like a healthy dish!",
+    "dateCreated": "2023-05-25T11:15:00Z",
+    "createdBy": {
+      "userID": 17,
+      "username": "Ervin Howell",
+      "displayProfile": ""
+    }
+  },
+  {
+    "commentID": 18,
+    "postID": 8,
+    "commentText": "I've read a few of these books already.",
+    "dateCreated": "2023-05-20T16:30:00Z",
+    "createdBy": {
+      "userID": 13,
+      "username": "Patricia Lebsack",
+      "displayProfile": ""
+    }
+  }
+]
