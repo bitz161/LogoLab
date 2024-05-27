@@ -1,8 +1,12 @@
+import LogoCreation from "../../components/logoCreation/logoCreation.component";
+import LogoSidebar from "../../components/logoSidebar/logoSidebar.component";
+
 const Logos = () => {
   return (
-    <div>
-      <h2>Pending Logo Maker</h2>
-    </div>
+    <>
+      <LogoSidebar />
+      <LogoCreation />
+    </>
   );
 };
 
