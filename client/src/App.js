@@ -7,6 +7,9 @@ import Pricing from "./routes/pricing/pricing.routes";
 import Community from "./routes/community/community.routes";
 import Logos from "./routes/logo/logo.routes";
 
+import { AppContainer } from 'react-hot-loader';
+// import { LocaleProvider } from 'antd';
+
 function App() {
   return (
     <Routes>
@@ -15,7 +18,10 @@ function App() {
         <Route path="home" element={<Welcome />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="community" element={<Community />} />
-        <Route path="logo" element={<Logos />} />
+        <Route path="logo" element={
+      <AppContainer>
+      <Logos />
+		</AppContainer>} />
       </Route>
     </Routes>
   );

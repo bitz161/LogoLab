@@ -1,29 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import { UserProvider } from "./utilities/context/user.context";
-import { LogoProvider } from "./utilities/context/logos.context";
-import { CommunityProvider } from "./utilities/context/community.context";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import App from './App';
+import { register } from './serviceWorker';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CommunityProvider>
-          <LogoProvider>
-            <App />
-          </LogoProvider>
-        </CommunityProvider>
-      </UserProvider>
-    </BrowserRouter>
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = document.createElement('div');
+root.id = 'root';
+document.body.appendChild(root);
+
+const render = (Component) => {
+  const rootElement = document.getElementById('root');
+  ReactDOM.render(
+    <AppContainer>
+        <Component />
+    </AppContainer>,
+    rootElement
+  );
+};
+
+
+render(App);
+
+register();
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(App);
+  });
+}
