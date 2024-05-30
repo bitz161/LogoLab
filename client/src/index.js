@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./utilities/context/user.context";
 import { LogoProvider } from "./utilities/context/logos.context";
 import { CommunityProvider } from "./utilities/context/community.context";
+import { CanvasProvider } from "./components/Canvas/CanvasContext";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +17,11 @@ root.render(
       <UserProvider>
         <CommunityProvider>
           <LogoProvider>
-            <App />
+            <ChakraProvider>
+              <CanvasProvider>
+                <App />
+              </CanvasProvider>
+            </ChakraProvider>
           </LogoProvider>
         </CommunityProvider>
       </UserProvider>

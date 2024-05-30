@@ -1,5 +1,7 @@
+import Editor from "../../components/Editor/Editor";
+
 const Logos = () => {
-  return <div>Hey</div>;
+  return <Editor />;
 };
 
 export default Logos;
