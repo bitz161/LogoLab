@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, Navigate, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Button from "../Buttons/buttons.component";
 import "./header.styles.scss";
 import {

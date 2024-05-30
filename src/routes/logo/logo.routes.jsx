@@ -1,9 +1,7 @@
+import Editor from "../../components/Editor/Editor";
+
 const Logos = () => {
-  return (
-    <div>
-      <h2>Pending Logo Maker</h2>
-    </div>
-  );
+  return <Editor />;
 };
 
 export default Logos;
