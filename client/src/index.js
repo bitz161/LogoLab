@@ -10,6 +10,7 @@ import { CommunityProvider } from "./utilities/context/community.context";
 import { CanvasProvider } from "./components/Canvas/CanvasContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import "./index.css";
+import FlowContainer from "./utilities/container/FlowContainer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,7 +21,9 @@ root.render(
           <LogoProvider>
             <ChakraProvider>
               <CanvasProvider>
-                <App />
+                <FlowContainer>
+                  <App />
+                </FlowContainer>
               </CanvasProvider>
             </ChakraProvider>
           </LogoProvider>
