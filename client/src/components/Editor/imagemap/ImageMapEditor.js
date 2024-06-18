@@ -3,11 +3,11 @@ import i18n from "i18next";
 import debounce from "lodash/debounce";
 import React, { Component } from "react";
 import Canvas from "../../../canvas/Canvas";
-import CommonButton from "../../components/common/CommonButton";
-import { Content } from "../../components/layout";
-import SandBox from "../../components/sandbox/SandBox";
-import "../../libs/fontawesome-5.2.0/css/all.css";
-import "../../styles/index.less";
+import CommonButton from "../../../components/common/CommonButton";
+import { Content } from "../../layout";
+import SandBox from "../../sandbox/SandBox";
+import "../../../libs/fontawesome-5.2.0/css/all.css";
+import "../../../styles/index.less";
 import ImageMapConfigurations from "./ImageMapConfigurations";
 import ImageMapFooterToolbar from "./ImageMapFooterToolbar";
 import ImageMapHeaderToolbar from "./ImageMapHeaderToolbar";
@@ -460,8 +460,7 @@ class ImageMapEditor extends Component {
             <Menu.SubMenu
               key="add"
               style={{ width: 120 }}
-              title={i18n.t("action.add")}
-            >
+              title={i18n.t("action.add")}>
               {this.transformList().map((item) => {
                 const option = Object.assign({}, item.option, { left, top });
                 const newItem = Object.assign({}, item, { option });
@@ -481,22 +480,19 @@ class ImageMapEditor extends Component {
             <Menu.Item
               onClick={() => {
                 this.canvasRef.handler.toGroup();
-              }}
-            >
+              }}>
               {i18n.t("action.object-group")}
             </Menu.Item>
             <Menu.Item
               onClick={() => {
                 this.canvasRef.handler.duplicate();
-              }}
-            >
+              }}>
               {i18n.t("action.clone")}
             </Menu.Item>
             <Menu.Item
               onClick={() => {
                 this.canvasRef.handler.remove();
-              }}
-            >
+              }}>
               {i18n.t("action.delete")}
             </Menu.Item>
           </Menu>
@@ -508,22 +504,19 @@ class ImageMapEditor extends Component {
             <Menu.Item
               onClick={() => {
                 this.canvasRef.handler.toActiveSelection();
-              }}
-            >
+              }}>
               {i18n.t("action.object-ungroup")}
             </Menu.Item>
             <Menu.Item
               onClick={() => {
                 this.canvasRef.handler.duplicate();
-              }}
-            >
+              }}>
               {i18n.t("action.clone")}
             </Menu.Item>
             <Menu.Item
               onClick={() => {
                 this.canvasRef.handler.remove();
-              }}
-            >
+              }}>
               {i18n.t("action.delete")}
             </Menu.Item>
           </Menu>
@@ -534,15 +527,13 @@ class ImageMapEditor extends Component {
           <Menu.Item
             onClick={() => {
               this.canvasRef.handler.duplicateById(target.id);
-            }}
-          >
+            }}>
             {i18n.t("action.clone")}
           </Menu.Item>
           <Menu.Item
             onClick={() => {
               this.canvasRef.handler.removeById(target.id);
-            }}
-          >
+            }}>
             {i18n.t("action.delete")}
           </Menu.Item>
         </Menu>
@@ -754,8 +745,7 @@ class ImageMapEditor extends Component {
             okText={i18n.t("action.ok")}
             cancelText={i18n.t("action.cancel")}
             onConfirm={onUpload}
-            placement="bottomRight"
-          >
+            placement="bottomRight">
             <CommonButton
               className="rde-action-btn"
               shape="circle"
@@ -811,8 +801,7 @@ class ImageMapEditor extends Component {
             ref={(c) => {
               this.container = c;
             }}
-            className="rde-editor-canvas"
-          >
+            className="rde-editor-canvas">
             <Canvas
               ref={(c) => {
                 this.canvasRef = c;

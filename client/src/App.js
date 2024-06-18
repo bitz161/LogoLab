@@ -17,7 +17,7 @@ function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="community" element={<Community />} />
         <Route path="logo" element={<Logos />} />
-        <Rout path="logoFull" element={<ImageMapEditor />} />
+        <Route path="logoFull" element={<ImageMapEditor />} />
       </Route>
     </Routes>
   );

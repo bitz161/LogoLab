@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { List, Button, Avatar } from "antd";
 
-import Icon from "../../../components/icon/Icon";
+import Icon from "../../../icon/Icon";
 
 class AnimationList extends Component {
   static propTypes = {
@@ -24,8 +24,7 @@ class AnimationList extends Component {
               shape="circle"
               onClick={() => {
                 onEdit(animation, index);
-              }}
-            >
+              }}>
               <Icon name="edit" />
             </Button>,
             <Button
@@ -33,8 +32,7 @@ class AnimationList extends Component {
               shape="circle"
               onClick={() => {
                 onDelete(index);
-              }}
-            >
+              }}>
               <Icon name="times" />
             </Button>,
           ];
