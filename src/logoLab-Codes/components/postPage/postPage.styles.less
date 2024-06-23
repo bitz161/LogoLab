@@ -1,0 +1,55 @@
+.postpageContainer {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	// overflow: scroll;
+
+	> section {
+		flex-grow: 1;
+		display: flex;
+		height: calc(100vh + 10rem);
+		flex-direction: column;
+		align-items: center;
+		overflow-y: scroll;
+
+		.post {
+			padding: 2rem;
+			width: 30rem;
+			//   border: 1px solid white;
+
+			form {
+				input {
+					height: 5rem;
+					border-radius: 1rem;
+					width: 100%;
+					padding: 0 10px;
+					font-weight: 400;
+				}
+
+				.postButtonContainer {
+					margin: 10px;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+
+					button {
+						border: 1px solid white;
+						padding: 10px;
+						color: white;
+						border-radius: 10px;
+
+						&:hover {
+							border: none;
+							// color: black;
+							background-color: black;
+							transform: translateY(-5px);
+							box-shadow: 0 10px 20px rgb(0, 0, 0, 0.7);
+						}
+					}
+				}
+			}
+		}
+	}
+}
