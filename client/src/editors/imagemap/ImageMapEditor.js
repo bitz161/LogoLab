@@ -14,6 +14,7 @@ import ImageMapHeaderToolbar from './ImageMapHeaderToolbar';
 import ImageMapItems from './ImageMapItems';
 import ImageMapPreview from './ImageMapPreview';
 import ImageMapTitle from './ImageMapTitle';
+import { uploadImageToFirebase } from '../../logoLab-Codes/utilities/firebase/firebase';
 
 const propertiesToInclude = [
 	'id',
@@ -642,7 +643,6 @@ class ImageMapEditor extends Component {
 		} = this.canvasHandlers;
 		const {
 			onChangePreview,
-			onDownload,
 			onUpload,
 			onChangeAnimations,
 			onChangeStyles,
@@ -657,7 +657,7 @@ class ImageMapEditor extends Component {
 					icon="file-download"
 					disabled={!editing}
 					tooltipTitle={i18n.t('action.download')}
-					onClick={onDownload}
+					onClick={onSaveImage}
 					tooltipPlacement="bottomRight"
 				/>
 				{editing ? (
@@ -665,7 +665,7 @@ class ImageMapEditor extends Component {
 						title={i18n.t('imagemap.imagemap-editing-confirm')}
 						okText={i18n.t('action.ok')}
 						cancelText={i18n.t('action.cancel')}
-						onConfirm={onUpload}
+						onConfirm={onSaveImage}
 						placement="bottomRight"
 					>
 						<CommonButton
@@ -683,17 +683,17 @@ class ImageMapEditor extends Component {
 						icon="file-upload"
 						tooltipTitle={i18n.t('action.upload')}
 						tooltipPlacement="bottomRight"
-						onClick={onUpload}
+						onClick={onSaveImage}
 					/>
 				)}
-				<CommonButton
+				{/* <CommonButton
 					className="rde-action-btn"
 					shape="circle"
 					icon="image"
 					tooltipTitle={i18n.t('action.image-save')}
 					onClick={onSaveImage}
 					tooltipPlacement="bottomRight"
-				/>
+				/> */}
 			</React.Fragment>
 		);
 		const titleContent = (

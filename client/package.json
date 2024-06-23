@@ -64,6 +64,7 @@
 		"react-ace": "^8.1.0",
 		"react-color": "^2.14.1",
 		"react-custom-scrollbars": "^4.2.1",
+		"react-design-editor": "file:",
 		"react-dom": "^16.14.0",
 		"react-helmet": "^5.2.0",
 		"react-hot-loader": "^4.12.20",

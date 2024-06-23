@@ -102,12 +102,10 @@
 // export default Title;
 
 import React, { useState, useEffect, useContext } from 'react';
-import { Button, Menu, Modal, Tooltip } from 'antd';
-import { ClickParam } from 'antd/lib/menu';
+import { Menu, Modal } from 'antd';
 import i18next from 'i18next';
 import { Flex } from '../flex';
 import { ShortcutHelp } from '../help';
-import Icon from '../icon/Icon';
 import { signInWithGooglePopup, signOutUser } from '../../logoLab-Codes/utilities/firebase/firebase.js';
 import { UserContext } from '../../logoLab-Codes/utilities/context/user.context.jsx';
 
@@ -178,13 +176,14 @@ const Title = ({ onChangeEditor, currentEditor }) => {
 					<Menu.Item key="pricing" style={{ color: '#fff' }}>
 						Pricing
 					</Menu.Item>
-
 					<Menu.Item key="community" style={{ color: '#fff' }}>
 						Community
 					</Menu.Item>
-					<Menu.Item key="imagemap" style={{ color: '#fff' }}>
-						{i18next.t('imagemap.imagemap')}
-					</Menu.Item>
+					{currentUser && (
+						<Menu.Item key="imagemap" style={{ color: '#fff' }}>
+							{i18next.t('imagemap.imagemap')}
+						</Menu.Item>
+					)}
 				</Menu>
 			</Flex>
 			<Flex flex="1" justifyContent="flex-end">

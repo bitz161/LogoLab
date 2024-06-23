@@ -8,7 +8,10 @@ const Sidebar = ({ setCommunityPosts }) => {
 	};
 
 	return (
-		<div className="sidebarContainer">
+		<div
+			className="sidebarContainer"
+			style={{ background: 'linear-gradient(141deg,#23303e,#404040 51%,#23303e 75%)' }}
+		>
 			<div onClick={() => currentPosts('home')}>Home</div>
 			<div onClick={() => currentPosts('popular')}>Popular</div>
 			<div onClick={() => currentPosts('mine')}>My Posts</div>
