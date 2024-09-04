@@ -1,4 +1,4 @@
-import { Badge, Button, Menu, Popconfirm } from 'antd';
+import { Badge, Button, Menu, Popconfirm, message } from 'antd';
 import i18n from 'i18next';
 import debounce from 'lodash/debounce';
 import React, { Component } from 'react';
@@ -14,7 +14,9 @@ import ImageMapHeaderToolbar from './ImageMapHeaderToolbar';
 import ImageMapItems from './ImageMapItems';
 import ImageMapPreview from './ImageMapPreview';
 import ImageMapTitle from './ImageMapTitle';
+import { getAuth } from 'firebase/auth';
 import { uploadImageToFirebase } from '../../logoLab-Codes/utilities/firebase/firebase';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const propertiesToInclude = [
 	'id',
@@ -597,6 +599,55 @@ class ImageMapEditor extends Component {
 		onSaveImage: () => {
 			this.canvasRef.handler.saveCanvasImage();
 		},
+		onUploadToFirebase: async () => {
+			const auth = getAuth();
+			if (!auth.currentUser) {
+				message.error('You must be logged in to upload images.');
+				return;
+			}
+
+			try {
+				console.log('Starting image upload process...');
+				this.showLoading(true);
+
+				// Get the canvas image as a data URL
+				const dataUrl = this.canvasRef.handler.canvas.toDataURL('image/png');
+				console.log('Canvas data URL created');
+
+				// Convert data URL to Blob
+				const blob = await (await fetch(dataUrl)).blob();
+				console.log('Blob created:', blob.size, 'bytes');
+
+				// Generate a unique file name
+				const fileName = `users/${auth.currentUser.uid}/canvas_images/${Date.now()}.png`;
+				console.log('File will be uploaded to:', fileName);
+
+				// Upload directly using Firebase Storage API
+				const storage = getStorage();
+				const storageRef = ref(storage, fileName);
+
+				console.log('Uploading blob to Firebase Storage...');
+				const snapshot = await uploadBytes(storageRef, blob);
+				console.log('Upload completed:', snapshot);
+
+				console.log('Getting download URL...');
+				const downloadURL = await getDownloadURL(snapshot.ref);
+				console.log('Download URL obtained:', downloadURL);
+
+				this.showLoading(false);
+
+				if (downloadURL) {
+					message.success('Image uploaded successfully. URL: ' + downloadURL);
+					// You can do something with the downloadURL here, like saving it to your app's state or database
+				} else {
+					throw new Error('Failed to get download URL');
+				}
+			} catch (error) {
+				console.error('Error in upload process:', error);
+				this.showLoading(false);
+				message.error('Failed to upload image: ' + error.message);
+			}
+		},
 	};
 
 	transformList = () => {
@@ -671,8 +722,9 @@ class ImageMapEditor extends Component {
 						<CommonButton
 							className="rde-action-btn"
 							shape="circle"
-							icon="file-upload"
-							tooltipTitle={i18n.t('action.upload')}
+							icon="cloud-upload-alt"
+							tooltipTitle={i18n.t('action.upload-to-firebase')}
+							onClick={this.handlers.onUploadToFirebase}
 							tooltipPlacement="bottomRight"
 						/>
 					</Popconfirm>
@@ -680,10 +732,10 @@ class ImageMapEditor extends Component {
 					<CommonButton
 						className="rde-action-btn"
 						shape="circle"
-						icon="file-upload"
-						tooltipTitle={i18n.t('action.upload')}
+						icon="cloud-upload-alt"
+						tooltipTitle={i18n.t('action.upload-to-firebase')}
+						onClick={this.handlers.onUploadToFirebase}
 						tooltipPlacement="bottomRight"
-						onClick={onSaveImage}
 					/>
 				)}
 				{/* <CommonButton

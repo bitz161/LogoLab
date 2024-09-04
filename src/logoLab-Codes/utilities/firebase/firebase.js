@@ -125,21 +125,28 @@ export const signInWithGooglePopup = async () => {
 };
 
 export const uploadImageToFirebase = async (imageFile, path) => {
+	console.log('uploadImageToFirebase called with path:', path);
 	try {
 		if (!imageFile) {
 			console.error('No image file provided.');
 			return null;
 		}
 
+		const storage = getStorage();
 		const storageRef = ref(storage, path);
-		const snapshot = await uploadBytes(storageRef, imageFile);
-		const downloadURL = await getDownloadURL(snapshot.ref);
 
-		console.log('File uploaded successfully. Download URL:', downloadURL);
+		console.log('Uploading file...');
+		const snapshot = await uploadBytes(storageRef, imageFile);
+		console.log('Upload completed:', snapshot);
+
+		console.log('Getting download URL...');
+		const downloadURL = await getDownloadURL(snapshot.ref);
+		console.log('Download URL:', downloadURL);
+
 		return downloadURL;
 	} catch (error) {
-		console.error('Error uploading image:', error);
-		return null;
+		console.error('Error in uploadImageToFirebase:', error);
+		throw error;
 	}
 };
 
