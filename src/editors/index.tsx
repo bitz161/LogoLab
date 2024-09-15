@@ -5,3 +5,5 @@ export { default as Pricing } from './pricing';
 export { default as Community } from './community';
 
 export { default as Welcome } from './welcome';
+
+export { default as Portfolio } from './portfolio';

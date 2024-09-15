@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc, getDoc, collection, addDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 // Your web app's Firebase configuration
@@ -124,7 +124,7 @@ export const signInWithGooglePopup = async () => {
 	}
 };
 
-export const uploadImageToFirebase = async (imageFile, path) => {
+export const uploadImageToFirebase = async (imageFile, path, currentDate) => {
 	console.log('uploadImageToFirebase called with path:', path);
 	try {
 		if (!imageFile) {
@@ -143,10 +143,46 @@ export const uploadImageToFirebase = async (imageFile, path) => {
 		const downloadURL = await getDownloadURL(snapshot.ref);
 		console.log('Download URL:', downloadURL);
 
+		await createImageInfo(imageFile.size, currentDate, downloadURL);
+
 		return downloadURL;
 	} catch (error) {
 		console.error('Error in uploadImageToFirebase:', error);
 		throw error;
+	}
+};
+
+export const createImageInfo = async (imgSize, currentDate, imgUrl) => {
+	try {
+		const user = auth.currentUser;
+		if (!user) {
+			console.error('No user authentication data provided.');
+			return null;
+		}
+
+		const imgDocRef = doc(db, 'uploads', user.uid);
+		const imgSnapshot = await getDoc(imgDocRef);
+
+		if (!imgSnapshot.exists()) {
+			const { displayName, email, uid } = user;
+			const createdAt = new Date();
+
+			await setDoc(imgDocRef, {
+				creatorID: uid,
+				creatorName: displayName,
+				creatorEmail: email,
+				fileName: `${currentDate}.png`,
+				fileUrl: imgUrl,
+				uploadTimestamp: new Date().toISOString(),
+				fileType: 'image/png',
+				fileSize: imgSize,
+				price: null,
+				status: 'not published',
+				description: '',
+			});
+		}
+	} catch (error) {
+		console.log(`Error creating image data: ${error}`);
 	}
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import Title from './components/layout/Title';
 import FlowContainer from './containers/FlowContainer';
-import { ImageMapEditor, Pricing, Community, Welcome } from './editors';
+import { ImageMapEditor, Pricing, Community, Welcome, Portfolio } from './editors';
 
 const App = () => {
 	const [activeEditor, setActiveEditor] = useState('home');
@@ -17,6 +17,8 @@ const App = () => {
 				return <ImageMapEditor />;
 			case 'pricing':
 				return <Pricing />;
+			case 'portfolio':
+				return <Portfolio />;
 			case 'community':
 				return <Community />;
 			case 'home':

@@ -16,7 +16,6 @@ import ImageMapPreview from './ImageMapPreview';
 import ImageMapTitle from './ImageMapTitle';
 import { getAuth } from 'firebase/auth';
 import { uploadImageToFirebase } from '../../logoLab-Codes/utilities/firebase/firebase';
-import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const propertiesToInclude = [
 	'id',
@@ -608,7 +607,7 @@ class ImageMapEditor extends Component {
 
 			try {
 				console.log('Starting image upload process...');
-				this.showLoading(true);
+				// this.showLoading(true);
 
 				// Get the canvas image as a data URL
 				const dataUrl = this.canvasRef.handler.canvas.toDataURL('image/png');
@@ -618,33 +617,24 @@ class ImageMapEditor extends Component {
 				const blob = await (await fetch(dataUrl)).blob();
 				console.log('Blob created:', blob.size, 'bytes');
 
+				const currentDate = Date.now();
+
 				// Generate a unique file name
-				const fileName = `users/${auth.currentUser.uid}/canvas_images/${Date.now()}.png`;
-				console.log('File will be uploaded to:', fileName);
+				const fileName = `users/${auth.currentUser.uid}/canvas_images/${currentDate}.png`;
 
-				// Upload directly using Firebase Storage API
-				const storage = getStorage();
-				const storageRef = ref(storage, fileName);
+				// Use the utility function to upload the image
+				const downloadURL = await uploadImageToFirebase(blob, fileName, currentDate);
 
-				console.log('Uploading blob to Firebase Storage...');
-				const snapshot = await uploadBytes(storageRef, blob);
-				console.log('Upload completed:', snapshot);
-
-				console.log('Getting download URL...');
-				const downloadURL = await getDownloadURL(snapshot.ref);
-				console.log('Download URL obtained:', downloadURL);
-
-				this.showLoading(false);
+				// this.showLoading(false);
 
 				if (downloadURL) {
 					message.success('Image uploaded successfully. URL: ' + downloadURL);
-					// You can do something with the downloadURL here, like saving it to your app's state or database
 				} else {
 					throw new Error('Failed to get download URL');
 				}
 			} catch (error) {
 				console.error('Error in upload process:', error);
-				this.showLoading(false);
+				// this.showLoading(false);
 				message.error('Failed to upload image: ' + error.message);
 			}
 		},
