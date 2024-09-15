@@ -701,7 +701,16 @@ class ImageMapEditor extends Component {
 					onClick={onSaveImage}
 					tooltipPlacement="bottomRight"
 				/>
-				{editing ? (
+				<CommonButton
+					className="rde-action-btn"
+					shape="circle"
+					icon="cloud-upload-alt"
+					disabled={!editing}
+					tooltipTitle={i18n.t('action.upload-to-firebase')}
+					onClick={this.handlers.onUploadToFirebase}
+					tooltipPlacement="bottomRight"
+				/>
+				{/* {editing ? (
 					<Popconfirm
 						title={i18n.t('imagemap.imagemap-editing-confirm')}
 						okText={i18n.t('action.ok')}
@@ -728,7 +737,7 @@ class ImageMapEditor extends Component {
 						tooltipPlacement="bottomRight"
 					/>
 				)}
-				{/* <CommonButton
+				<CommonButton
 					className="rde-action-btn"
 					shape="circle"
 					icon="image"

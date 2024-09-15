@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
+import { getFilesByUser } from '../firebase/firebase';
 
 export const LogoContext = createContext({
 	logos: null,
@@ -6,15 +7,7 @@ export const LogoContext = createContext({
 });
 
 export const LogoProvider = ({ children }) => {
-	const [logos, setLogos] = useState(null);
-
-	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then(response => response.json())
-			.then(logo => {
-				setLogos(logo);
-			});
-	}, []);
+	const [logos, setLogos] = useState([]);
 
 	//TODO: Creating a logo http request
 
