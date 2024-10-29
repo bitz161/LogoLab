@@ -1,0 +1,47 @@
+.portfolio-container {
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+
+	h2 {
+		font-size: 2rem;
+		color: #333;
+		margin-bottom: 20px;
+	}
+
+	.logo-container {
+		display: inline-block;
+		width: 22%; // Adjusts to 4 columns with spacing
+		margin: 1%;
+		text-align: center;
+		box-sizing: border-box;
+
+		img {
+			width: 100%;
+			height: auto;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+		}
+
+		p {
+			margin-top: 10px;
+			font-size: 1rem;
+			color: #555;
+		}
+	}
+
+	// Responsive adjustments
+	@media screen and (max-width: 1024px) {
+		.logo-container {
+			width: 45%; // Two columns on medium screens
+			margin: 2.5%;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.logo-container {
+			width: 100%; // One column on small screens
+			margin: 10px 0;
+		}
+	}
+}

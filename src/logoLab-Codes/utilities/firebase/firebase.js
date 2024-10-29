@@ -171,7 +171,7 @@ export const createImageInfo = async (imgSize, currentDate, imgUrl) => {
 				creatorID: uid,
 				creatorName: displayName,
 				creatorEmail: email,
-				fileName: `${currentDate}.png`,
+				fileName: `Untitled-${currentDate}.png`,
 				fileUrl: imgUrl,
 				uploadTimestamp: new Date().toISOString(),
 				fileType: 'image/png',
