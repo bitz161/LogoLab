@@ -1,3 +1,86 @@
+// .portfolio-container {
+// 	width: 100%;
+// 	padding: 20px;
+// 	text-align: center;
+
+// 	h2 {
+// 		font-size: 2rem;
+// 		color: #333;
+// 		margin-bottom: 20px;
+// 	}
+
+// 	.filter-buttons {
+// 		margin-bottom: 20px;
+
+// 		button {
+// 			margin: 0 10px;
+// 			padding: 10px 20px;
+// 			font-size: 1rem;
+// 			cursor: pointer;
+// 			border: none;
+// 			background-color: #333;
+// 			color: #fff;
+// 			border-radius: 5px;
+
+// 			&:hover {
+// 				background-color: #555;
+// 			}
+
+// 			&:focus {
+// 				outline: 2px solid #007bff;
+// 			}
+// 		}
+// 	}
+
+// 	.logo-container {
+// 		position: relative;
+// 		display: inline-block;
+// 		width: 22%;
+// 		margin: 1%;
+// 		text-align: center;
+// 		box-sizing: border-box;
+
+// 		img {
+// 			width: 100%;
+// 			height: auto;
+// 			border: 1px solid #ddd;
+// 			border-radius: 8px;
+// 		}
+
+// 		.published-label {
+// 			position: absolute;
+// 			top: 8px;
+// 			left: 8px;
+// 			background-color: rgba(0, 0, 0, 0.7);
+// 			color: #fff;
+// 			font-size: 0.8rem;
+// 			padding: 2px 6px;
+// 			border-radius: 4px;
+// 			z-index: 1;
+// 		}
+
+// 		p {
+// 			margin-top: 10px;
+// 			font-size: 1rem;
+// 			color: #555;
+// 		}
+// 	}
+
+// 	@media screen and (max-width: 1024px) {
+// 		.logo-container {
+// 			width: 45%;
+// 			margin: 2.5%;
+// 		}
+// 	}
+
+// 	@media screen and (max-width: 768px) {
+// 		.logo-container {
+// 			width: 100%;
+// 			margin: 10px 0;
+// 		}
+// 	}
+// }
+
 .portfolio-container {
 	width: 100%;
 	padding: 20px;
@@ -9,9 +92,39 @@
 		margin-bottom: 20px;
 	}
 
+	.filter-container {
+		margin-bottom: 20px;
+
+		label {
+			margin: 0 10px;
+			font-size: 1rem;
+			cursor: pointer;
+
+			input[type='radio'] {
+				margin-right: 5px;
+			}
+		}
+
+		button {
+			margin-left: 10px;
+			padding: 8px 16px;
+			font-size: 0.9rem;
+			cursor: pointer;
+			border: none;
+			background-color: #333;
+			color: #fff;
+			border-radius: 4px;
+
+			&:hover {
+				background-color: #555;
+			}
+		}
+	}
+
 	.logo-container {
+		position: relative;
 		display: inline-block;
-		width: 22%; // Adjusts to 4 columns with spacing
+		width: 22%;
 		margin: 1%;
 		text-align: center;
 		box-sizing: border-box;
@@ -23,6 +136,18 @@
 			border-radius: 8px;
 		}
 
+		.published-label {
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			background-color: rgba(0, 0, 0, 0.7);
+			color: #fff;
+			font-size: 0.8rem;
+			padding: 2px 6px;
+			border-radius: 4px;
+			z-index: 1;
+		}
+
 		p {
 			margin-top: 10px;
 			font-size: 1rem;
@@ -30,17 +155,16 @@
 		}
 	}
 
-	// Responsive adjustments
 	@media screen and (max-width: 1024px) {
 		.logo-container {
-			width: 45%; // Two columns on medium screens
+			width: 45%;
 			margin: 2.5%;
 		}
 	}
 
 	@media screen and (max-width: 768px) {
 		.logo-container {
-			width: 100%; // One column on small screens
+			width: 100%;
 			margin: 10px 0;
 		}
 	}

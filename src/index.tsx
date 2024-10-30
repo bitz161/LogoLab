@@ -30,11 +30,11 @@ const render = Component => {
 		<AppContainer>
 			<LocaleProvider locale={antResources[i18next.language]}>
 				<UserProvider>
-					<CommunityProvider>
-						<LogoProvider>
+					<LogoProvider>
+						<CommunityProvider>
 							<Component />
-						</LogoProvider>
-					</CommunityProvider>
+						</CommunityProvider>
+					</LogoProvider>
 				</UserProvider>
 			</LocaleProvider>
 		</AppContainer>,

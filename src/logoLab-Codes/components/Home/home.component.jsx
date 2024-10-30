@@ -2,6 +2,7 @@ import SearchBar from '../searchbar/searchbar.component.jsx';
 import './home.styles.less';
 import React, { useContext } from 'react';
 import { UserContext } from '../../utilities/context/user.context.jsx';
+import PublishedLogoGallery from '../PublishedGallery/PublishedLogoGallery.component.jsx';
 
 const Home = () => {
 	const { currentUser } = useContext(UserContext);
@@ -21,8 +22,10 @@ const Home = () => {
 				{/* <SearchBar /> */}
 			</div>
 			{/* Sample text */}
-			{/* Logos location */}
-			<div></div>
+
+			<div>
+				<PublishedLogoGallery />
+			</div>
 		</div>
 	);
 };

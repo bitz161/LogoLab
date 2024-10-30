@@ -4,7 +4,7 @@ import { getFilesByUser } from '../../logoLab-Codes/utilities/firebase/firebase.
 import PortfolioLanding from '../../logoLab-Codes/components/Portfolio/portfolio.components.jsx';
 
 const Portfolio = () => {
-	const { setLogos } = useContext(LogoContext);
+	const { logos, setLogos, logoChanger } = useContext(LogoContext);
 
 	useEffect(() => {
 		const fetchLogos = async () => {
@@ -13,7 +13,7 @@ const Portfolio = () => {
 		};
 
 		fetchLogos();
-	}, []);
+	}, [logoChanger]);
 
 	return <PortfolioLanding />;
 };
