@@ -23,11 +23,11 @@ const Home = () => {
 			</div>
 			{/* Sample text */}
 
-			<div>
-				<PublishedLogoGallery />
-			</div>
+			<div>{currentUser && <PublishedLogoGallery />}</div>
 		</div>
 	);
 };
 
 export default Home;
+
+//rather than having a community, how about people able to comment in those published images since we need to remove the selling feature

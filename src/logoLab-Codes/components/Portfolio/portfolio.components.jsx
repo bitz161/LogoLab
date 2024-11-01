@@ -3,9 +3,11 @@ import { LogoContext } from '../../utilities/context/logos.context.jsx';
 import EditOverlay from './edit-overlay/editOverlay.components.jsx';
 import { updateImageInfo } from '../../utilities/firebase/firebase.js';
 import './portfolio.styles.less';
+import { UserContext } from '../../utilities/context/user.context.jsx';
 
 const PortfolioLanding = () => {
 	const { logos, setLogoChanger, logoChanger } = useContext(LogoContext);
+	const { currentUser } = useContext(UserContext);
 
 	const [selectedLogo, setSelectedLogo] = useState(null);
 	const [filterStatus, setFilterStatus] = useState('all');
@@ -73,13 +75,15 @@ const PortfolioLanding = () => {
 				</label>
 			</div>
 
-			{filteredLogos.map((logo, index) => (
-				<div className="logo-container" key={index} onClick={() => handleOpenOverlay(logo)}>
-					{logo.status === 'published' && <span className="published-label">Published</span>}
-					<img src={logo.fileUrl} alt={`${logo.creatorName}'s logo`} />
-					<p>{logo.fileName}</p>
-				</div>
-			))}
+			{filteredLogos.map((logo, index) =>
+				logo.creatorID === currentUser.uid ? (
+					<div className="logo-container" key={index} onClick={() => handleOpenOverlay(logo)}>
+						{logo.status === 'published' && <span className="published-label">Published</span>}
+						<img src={logo.fileUrl} alt={`${logo.creatorName}'s logo`} />
+						<p>{logo.fileName}</p>
+					</div>
+				) : null,
+			)}
 
 			{selectedLogo && <EditOverlay logo={selectedLogo} onClose={handleCloseOverlay} onPublish={handlePublish} />}
 		</div>
