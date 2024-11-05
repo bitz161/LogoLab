@@ -22,7 +22,11 @@ const PortfolioLanding = () => {
 
 	const handlePublish = updatedFields => {
 		if (selectedLogo && selectedLogo.id) {
-			updateImageInfo(selectedLogo.id, { ...updatedFields, status: 'published' })
+			updateImageInfo(selectedLogo.id, {
+				...updatedFields,
+				status: 'published',
+				publishedTime: new Date().toISOString(),
+			})
 				.then(() => {
 					console.log('Document updated successfully');
 					handleCloseOverlay();

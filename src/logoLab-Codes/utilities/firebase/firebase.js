@@ -179,44 +179,13 @@ export const createImageInfo = async (imgSize, currentDate, imgUrl) => {
 				price: null,
 				status: 'not published',
 				description: '',
+				publishedTime: '',
 			});
 		}
 	} catch (error) {
 		console.log(`Error creating image data: ${error}`);
 	}
 };
-
-// export const getFilesByUser = async () => {
-// 	const filesArray = [];
-// 	try {
-// 		const user = auth.currentUser;
-
-// 		if (user) {
-// 			const userId = user.uid;
-
-// 			// Reference to your Firestore collection (replace 'yourCollection' with the actual name)
-// 			const filesCollection = collection(db, 'uploads');
-
-// 			// Create a query to find documents where 'creatorID' matches the user's ID
-// 			const q = query(filesCollection, where('creatorID', '==', userId));
-
-// 			// Get the query results (documents)
-// 			const querySnapshot = await getDocs(q);
-
-// 			// Loop through the documents and log the data
-// 			querySnapshot.forEach(doc => {
-// 				console.log(doc.id, ' => ', doc.data());
-// 				filesArray.push(doc.data());
-// 			});
-// 		} else {
-// 			console.log('No user is signed in.');
-// 		}
-// 	} catch (error) {
-// 		console.log(`Unable to retrieve upload datas: ${error}`);
-// 	}
-
-// 	return filesArray;
-// };
 
 export const getFilesByUser = async () => {
 	const filesArray = [];
