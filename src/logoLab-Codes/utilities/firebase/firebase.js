@@ -218,9 +218,32 @@ export const updateImageInfo = async (docId, updatedFields) => {
 	try {
 		const imgDocRef = doc(db, 'uploads', docId);
 		await updateDoc(imgDocRef, updatedFields);
+		createCommentInfo(docId);
 		console.log('Document updated with new information:', updatedFields);
 	} catch (error) {
 		console.error('Error updating document:', error);
+	}
+};
+
+export const createCommentInfo = async docID => {
+	try {
+		const user = auth.currentUser;
+		if (!user) {
+			console.error('No user authentication data provided.');
+			return null;
+		}
+
+		const imgDocRef = doc(db, 'comments', `${Date.now()}-${user.uid}`);
+		const imgSnapshot = await getDoc(imgDocRef);
+
+		if (!imgSnapshot.exists()) {
+			await setDoc(imgDocRef, {
+				imageID: docID,
+				imageComments: [],
+			});
+		}
+	} catch (error) {
+		console.log(`Error creating image data: ${error}`);
 	}
 };
 
