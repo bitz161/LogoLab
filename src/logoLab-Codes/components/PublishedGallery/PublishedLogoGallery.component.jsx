@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useEffect, useState } from 'react';
 import './PublishedLogoGallery.styles.less';
 import { LogoContext } from '../../utilities/context/logos.context.jsx';
-import { getFilesByUser, getAllFiles } from '../../utilities/firebase/firebase';
+import { getFilesByUser, getCommentsByImage } from '../../utilities/firebase/firebase';
 import ImageOverlay from './imageOverlay/ImageOverlay.component.jsx';
 
 const PublishedLogoGallery = () => {
@@ -10,7 +10,7 @@ const PublishedLogoGallery = () => {
 
 	useEffect(() => {
 		const fetchLogos = async () => {
-			const files = await getAllFiles();
+			const files = await getFilesByUser();
 			setLogos(files);
 		};
 		fetchLogos();
