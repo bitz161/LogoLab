@@ -6,14 +6,17 @@ export const LogoContext = createContext({
 	setLogos: () => null,
 	logoChanger: null,
 	setLogoChanger: () => null,
+	imageComments: null,
+	setImageComments: () => null,
 });
 
 export const LogoProvider = ({ children }) => {
 	const [logos, setLogos] = useState([]);
 	const [logoChanger, setLogoChanger] = useState(false);
+	const [imageComments, setImageComments] = useState([]);
 
 	//TODO: Creating a logo http request
 
-	const value = { logos, setLogos, logoChanger, setLogoChanger };
+	const value = { logos, setLogos, logoChanger, setLogoChanger, imageComments, setImageComments };
 	return <LogoContext.Provider value={value}>{children}</LogoContext.Provider>;
 };

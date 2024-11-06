@@ -233,7 +233,7 @@ export const createCommentInfo = async docID => {
 			return null;
 		}
 
-		const imgDocRef = doc(db, 'comments', `${Date.now()}-${user.uid}`);
+		const imgDocRef = doc(db, 'comments', docID);
 		const imgSnapshot = await getDoc(imgDocRef);
 
 		if (!imgSnapshot.exists()) {
@@ -244,6 +244,101 @@ export const createCommentInfo = async docID => {
 		}
 	} catch (error) {
 		console.log(`Error creating image data: ${error}`);
+	}
+};
+
+// If you need to get all comments for a specific image
+// export const getCommentsByImage = async imageId => {
+// 	const commentsArray = [];
+// 	try {
+// 		const commentsCollection = collection(db, 'comments');
+// 		const q = query(commentsCollection, where('imageID', '==', imageId));
+
+// 		const querySnapshot = await getDocs(q);
+
+// 		querySnapshot.forEach(doc => {
+// 			const data = doc.data();
+
+// 			commentsArray.push({ ...data, id: doc.id });
+// 		});
+// 	} catch (error) {
+// 		console.log(`Unable to retrieve comments data: ${error}`);
+// 	}
+
+// 	return commentsArray;
+// };
+
+export const getCommentsByImage = async imageId => {
+	console.log('Fetching comments for imageID:', imageId); // Log the queried imageID
+	const commentsArray = [];
+	try {
+		const commentsCollection = collection(db, 'comments');
+		const q = query(commentsCollection, where('imageID', '==', imageId));
+
+		const querySnapshot = await getDocs(q);
+
+		querySnapshot.forEach(doc => {
+			const data = doc.data();
+			console.log('Fetched comment:', data); // Log each document fetched
+			commentsArray.push({ ...data, id: doc.id });
+		});
+	} catch (error) {
+		console.log(`Unable to retrieve comments data: ${error}`);
+	}
+
+	return commentsArray;
+};
+
+// Function to add a new comment
+export const addComment = async (imageId, commentText) => {
+	try {
+		const user = auth.currentUser;
+		if (!user) {
+			console.error('No user authentication data provided.');
+			return null;
+		}
+
+		const commentDocRef = doc(db, 'comments', `${imageId}`);
+		const commentSnapshot = await getDoc(commentDocRef);
+
+		if (commentSnapshot.exists()) {
+			// If document exists, update the comments array
+			const currentComments = commentSnapshot.data().imageComments || [];
+			const newComment = {
+				commentId: Date.now().toString(),
+				userId: user.uid,
+				userName: user.displayName,
+				userPhoto: user.photoURL,
+				text: commentText,
+				timestamp: new Date().toISOString(),
+			};
+
+			await updateDoc(commentDocRef, {
+				imageComments: [...currentComments, newComment],
+			});
+
+			return newComment;
+		} else {
+			// If document doesn't exist, create it with the first comment
+			const newComment = {
+				commentId: Date.now().toString(),
+				userId: user.uid,
+				userName: user.displayName,
+				userPhoto: user.photoURL,
+				text: commentText,
+				timestamp: new Date().toISOString(),
+			};
+
+			await setDoc(commentDocRef, {
+				imageID: imageId,
+				imageComments: [newComment],
+			});
+
+			return newComment;
+		}
+	} catch (error) {
+		console.error('Error adding comment:', error);
+		return null;
 	}
 };
 
