@@ -1,0 +1,23 @@
+[
+build
+]
+  command = "npm run build:netlify"
+  publish = "docs"
+
+[
+build.environment
+]
+  NODE_VERSION = "16"
+  NPM_VERSION = "8"
+
+[[
+redirects
+]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[
+build.processing
+]
+  skip_processing = false
