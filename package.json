@@ -20,17 +20,8 @@
 		"lint": "npm run tsc",
 		"clean": "node scripts/clean",
 		"tsc": "tsc",
-		"typedoc": "typedoc",
-		"build:netlify": "webpack --node-env production --config webpack.prod.js",
-    	"predeploy": "npm install",
-    	"postinstall": "npm run clean"
+		"typedoc": "typedoc"
 	},
-	"resolutions": {
-    "webpack": "^4.46.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "fabric": "^4.6.0"
-  },
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/salgum1114/react-design-editor.git"
