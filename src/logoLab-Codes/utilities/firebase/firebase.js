@@ -213,6 +213,23 @@ export const getFilesByUser = async () => {
 	return filesArray;
 };
 
+export const getAllFiles = async () => {
+	const filesArray = [];
+	try {
+		const filesCollection = collection(db, 'uploads');
+		const querySnapshot = await getDocs(filesCollection);
+
+		querySnapshot.forEach(doc => {
+			const data = doc.data();
+			filesArray.push({ ...data, id: doc.id });
+		});
+	} catch (error) {
+		console.log(`Unable to retrieve upload data: ${error}`);
+	}
+
+	return filesArray;
+};
+
 // Function to update image information in Firestore
 export const updateImageInfo = async (docId, updatedFields) => {
 	try {
