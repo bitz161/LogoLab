@@ -4,5 +4,6 @@ public/js
 public/index.html
 public/fonts
 dist/
+lib/
 .vscode/
 .DS_Store
