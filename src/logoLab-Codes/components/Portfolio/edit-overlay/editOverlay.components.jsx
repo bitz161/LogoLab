@@ -21,7 +21,7 @@ const EditOverlay = ({ logo, onClose, onPublish }) => {
 						onChange={e => setFileName(e.target.value)}
 						placeholder="File Name"
 					/>
-					<input type="text" value={price} onChange={e => setPrice(e.target.value)} placeholder="Price" />
+					{/* <input type="text" value={price} onChange={e => setPrice(e.target.value)} placeholder="Price" /> */}
 					<textarea
 						value={description}
 						onChange={e => setDescription(e.target.value)}

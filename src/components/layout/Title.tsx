@@ -70,9 +70,9 @@ const Title = ({ onChangeEditor, currentEditor }) => {
 					<Menu.Item key="home" style={{ color: '#fff' }}>
 						LogoLab
 					</Menu.Item>
-					<Menu.Item key="pricing" style={{ color: '#fff' }}>
+					{/* <Menu.Item key="pricing" style={{ color: '#fff' }}>
 						Pricing
-					</Menu.Item>
+					</Menu.Item> */}
 					<Menu.Item key="community" style={{ color: '#fff' }}>
 						Community
 					</Menu.Item>
